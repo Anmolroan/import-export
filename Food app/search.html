@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food Application</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body id="body">
+    <div id="navbar">
+       
+        
+    </div>
+    <div id="searcdetails"> <input type="text" id="searchinput" placeholder="Searchfood">
+       <button> <div class="material-icons" id="span">
+            search
+        </div>
+    </button>
+    </div>
+    <div id="shownames"></div>
+    <div id="container"></div>
+</body>
+</html>
+<script type="module">
+    var navbardiv=document.getElementById("navbar")
+    import navbar from "./components/navbar.js";
+    console.log(navbar)
+    navbardiv.innerHTML=navbar()
+   
+        var q=document.getElementById("searchinput").value
+        console.log(q)
+var container= document.getElementById("container")
+  import {getdata,append} from "./scripts/showData.js";
+  let res=await getdata(`http://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken`)
+  append(container,res)
+  
+ 
+ 
+  var span=document.getElementById("span")
+
+
+  span.onclick= async function show(){
+    var val=document.getElementById("searchinput");
+   
+    // var anmol =await fetch(`http://www.themealdb.com/api/json/v1/1/filter.php?a=Indian`)
+    var anmol =await fetch(`http://www.themealdb.com/api/json/v1/1/filter.php?c=${val.value}`)
+ let data= await anmol.json();
+
+ console.log(data.meals)
+ container.innerHTML=null;
+ append(container,data.meals)
+ 
+  }
+    
+
+ 
+</script>
+

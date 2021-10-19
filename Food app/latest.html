@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food Application</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body id="body">
+    <div id="navbar">
+       
+        
+    </div>
+    <div id="searcdetails"> <input type="text" id="searchinput" placeholder="Searchfood">
+       <button> <div class="material-icons" id="span">
+            search
+        </div>
+    </button>
+    </div>
+    <div id="shownames"></div>
+    <div id="container"></div>
+</body>
+</html>
+<script type="module">
+    var navbardiv=document.getElementById("navbar")
+    import navbar from "./components/navbar.js";
+    console.log(navbar)
+    navbardiv.innerHTML=navbar()
+</script>
