@@ -1,0 +1,18 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: solid 1px black;
+  }
+
+  #options {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #options h3 {
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+  
